@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "8b3fbfc8-cd97-4718-af4f-dbbb8508b6b6",
+		"name": "EpbxManagerIntegracao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Importação Mailing Lote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"CodigoCliente\": \"213456\",\r\n    \"Nome\": \"Talk Telecom\",\r\n    \"DDD\": \"11\",\r\n    \"Numero\": \"23910000\",\r\n    \"Detalhe\": \"Info1,Info2,Info3\"\r\n  }\r\n]"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/CampanhaDiscagem/Lote?campanhaId=38",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"CampanhaDiscagem",
+						"Lote"
+					],
+					"query": [
+						{
+							"key": "campanhaId",
+							"value": "38"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Importação Mailing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CodigoCliente\": \"123456\",\r\n    \"Nome\": \"Wagner\",\r\n    \"DDD\": \"11\",\r\n    \"Numero\": \"997422080\",\r\n    \"Detalhe\": \"Info1,Info2,Info3\",\r\n    \"TelefoneTipo\":\"Tipo1\"\r\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/CampanhaDiscagem?campanhaId=3230",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"CampanhaDiscagem"
+					],
+					"query": [
+						{
+							"key": "campanhaId",
+							"value": "3230"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agendamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Campanha\": \"578\",\n    \"CodCliente\": \"123456\",\n    \"DDD\": \"11\",\n    \"Telefone\": \"997422080\",\n    \"DataHora\": \"2018-04-03T13:35:00\",\n    \"Ramal\": 1009,\n    \"NomeCliente\": \"Wagner\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Atendimento/Agendamento",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Atendimento",
+						"Agendamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contato negativo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Campanha\": \"3230\",\n    \"CodCliente\": \"123456\",\n    \"DDD\": \"11\",\n    \"Telefone\": \"997422080\",\n    \"Prioridade\":\"\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Atendimento/ContatoNegativo",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Atendimento",
+						"ContatoNegativo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Campanha\": \"168\",\n    \"CodCliente\": \"1234\",\n    \"Geral\": \"1\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Atendimento/RemoveCliente",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Atendimento",
+						"RemoveCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limpar Campanha",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"CampanhaId\":705,\"MantemAgendamento\":false}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/ZerarCampanha?CampanhaId=705",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Campanha",
+						"ZerarCampanha"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "705"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticação Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2141d0fa-e9bb-4f4a-a325-b217ab59b688",
+						"exec": [
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"AcessToken\", JsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "abc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{UrlToken}}",
+					"host": [
+						"{{UrlToken}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "wagner.davanco",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "xxxxxxxxxxxxxx",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "abc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://integracao.epbx.com.br/Service/oauth2/Token",
+					"protocol": "http",
+					"host": [
+						"integracao",
+						"epbx",
+						"com",
+						"br"
+					],
+					"path": [
+						"Service",
+						"oauth2",
+						"Token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Retorno Campanha",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/CampanhaDiscagemRetorno/Lote?CampanhaId=698&LoteControle=1",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"CampanhaDiscagemRetorno",
+						"Lote"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "698"
+						},
+						{
+							"key": "LoteControle",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Duplicar Campanha",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CodigoCliente\": \"213456\",\r\n    \"Nome\": \"Talk Telecom\",\r\n    \"DDD\": \"11\",\r\n    \"Numero\": \"23910000\",\r\n    \"Detalhe\": \"Info1,Info2,Info3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/Duplicar?CampanhaId=704",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Campanha",
+						"Duplicar"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "704"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas Campanhas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/GetTodasCampanhas",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Campanha",
+						"GetTodasCampanhas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

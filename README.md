@@ -3,7 +3,7 @@ Collection Postman - Integração Manager
 
 
 
-## Autenticar - Token de Acesso
+## Token de Acesso
 ```javascript
 
 curl --location --request POST 'http://integracao.epbx.com.br/Service/oauth2/Token' \

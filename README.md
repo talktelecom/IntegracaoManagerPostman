@@ -73,7 +73,7 @@ curl --location --request GET 'http://integracao.epbx.com.br/Service/Api/Integra
 --data-raw ''
 ```
 
-## Alterar Intervalo
+## Alterar intervalo
 ```javascript
 curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/IntegracaoRamal/AlterarIntervalo' \
 --header 'Content-Type: application/json' \

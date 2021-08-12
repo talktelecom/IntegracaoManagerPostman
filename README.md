@@ -3,7 +3,7 @@ Collection Postman - Integração Manager
 
 
 
-## Token de Acesso
+## Token de acesso
 ```javascript
 
 curl --location --request POST 'http://integracao.epbx.com.br/Service/oauth2/Token' \
@@ -17,7 +17,7 @@ curl --location --request POST 'http://integracao.epbx.com.br/Service/oauth2/Tok
 ```
 
 
-## Logar Ramal
+## Logar ramal
 ```javascript
 curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/IntegracaoRamal/Logar' \
 --header 'Content-Type: application/json' \
@@ -30,7 +30,7 @@ curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/Integr
 
 ```
 
-## Deslogar Ramal
+## Deslogar ramal
 ```javascript
 curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/IntegracaoRamal/Deslogar' \
 --header 'Content-Type: application/json' \
@@ -64,7 +64,7 @@ curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/Integr
 ```
 
 
-## Listar Intervalos
+## Listar intervalos
 ```javascript
 curl --location --request GET 'http://integracao.epbx.com.br/Service/Api/IntegracaoRamal/Intervalos' \
 --header 'Content-Type: application/json' \
@@ -85,7 +85,7 @@ curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/Integr
 ```
 
 
-## Listar Informaçãoes da Ligação 
+## Listar informaçãoes da chamada em curso 
 ```javascript
 curl --location --request GET 'http://integracao.epbx.com.br/Service/Api/IntegracaoRamal/ChamadaAtiva' \
 --header 'Content-Type: application/json' \

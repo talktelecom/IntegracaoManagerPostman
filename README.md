@@ -93,7 +93,7 @@ curl --location --request GET 'http://integracao.epbx.com.br/Service/Api/Integra
 --header 'Cookie: OAuthEpbxManagerLocalCookie=gF-OrniEfLf3GuyEGz-xq4lq6xPh-_pMwDl0yJotEZWLSkp140m15URWnFXOp3XN430bBSX5yfBIqOl4A2mbIjGT7hdj_vcFWxFjXXD4DSssjLLIGB6uom-LPtVdQM0ZLxX1TSIe1GLd1O6zD2TVznQwRo2Ol0Y3huTOzJcg6MD6yyqHJuvRq38NxN0gOrhx1kUSxr_auUjcoVVI11quE32QFpGF9-_8uxk-CUoEzG_Eb7iJ1KYeGrvWeAli4jCynriqJiT7VqAzIu9_3tU-BRpfTN_Q-hMw4jZ81P1j4gTS7GJfayYYyqCM2XBpboN7xvsyi9nEFXWjHKWKXuci7SUrxaLh9bzPv1ycWYPOm0t4Yjq6FXBcf4buO7NKBIYAbecE-7RbIN7SWImvNFsYQ9pTkyCjVN_gR3w_Yvh6ZXc' \
 --data-raw ''
 ```
-
+ 
 
 
 

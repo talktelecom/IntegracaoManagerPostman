@@ -1,4 +1,4 @@
-# IntegracaoManagerPostman
+# Integração Atendimento - Api Rest
 Collection Postman - Integração Manager
 
 

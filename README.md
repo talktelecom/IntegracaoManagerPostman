@@ -17,6 +17,21 @@ curl --location --request POST 'http://integracao.epbx.com.br/Service/oauth2/Tok
 ```
 
 
+
+
+## Refresh Token
+```javascript
+
+curl --location --request POST 'http://integracao.epbx.com.br/Service/oauth2/Token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: OAuthEpbxManagerLocalCookie=UPWp8mh2B2OZa1D46tz5C-s_ymuUvGM28eOj-BLqnrOE-OcS-LYI5NpkN0ZTMo31GmL5jcqnrBs2A14Ap1dmUtAHbVqAMzkBEquCT6DqqslZTyspkryGxtf1xD5lz6mGX7ZZ3RgJ4bMUTFLibFhGdEgnlgyJdz1GXEHw4m7EJRLYjYnfx42ofdlrmycbLqKdaWkTdMKdSxhSKgDcDy71501DqTq_pHzPD6sx8t8QgdqwzHJ0e36bhPfZ-CyT22-yF9_9hjtpizNY71ZMAxQ7wAszsvaLv01XrFInzCgVX1lGeSVvB5bM7zAASc1T74hrbKDEbAre3Hn_AnXFcrYa2xs0zCpgnVZuPMPRbcldM1__6J5DD9R6XofmbcexZOs3lK6l8dYd4MjzBkAX9KbmlYmwm9uiNtwoT6XDnfiAikA' \
+--data-urlencode 'grant_type=refresh_token' \
+--data-urlencode 'refresh_token=5fd218806183448d88419c419c1860c41229e17d964e4e8cb53e4425c7a08d3f' \
+--data-urlencode 'client_id=abc'
+
+```
+
+
 ## Logar ramal
 ```javascript
 curl --location --request POST 'http://integracao.epbx.com.br/Service/Api/IntegracaoRamal/Logar' \

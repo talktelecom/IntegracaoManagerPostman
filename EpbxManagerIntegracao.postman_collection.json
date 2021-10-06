@@ -1,10 +1,313 @@
 {
 	"info": {
-		"_postman_id": "8b3fbfc8-cd97-4718-af4f-dbbb8508b6b6",
-		"name": "EpbxManagerIntegracao",
+		"_postman_id": "07a458a8-72a5-4622-b874-a94d313aaa7f",
+		"name": "Manager",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Download Mp3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"",
+							"try {",
+							"    var data = JSON.parse(responseBody);",
+							"    tests[\"Body contains access_token\"] = responseBody.has(\"access_token\");",
+							"    postman.setEnvironmentVariable(\"i91AccessToken\", data.access_token);",
+							"    postman.setEnvironmentVariable(\"i91RefreshToken\", data.refresh_token);",
+							"}",
+							"catch(e) {",
+							"    console.log('Cannot parse response,probably not a JSON');",
+							"}",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey {{ApiKey}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/Ligacao/Download/59dd44c28d0eb5fe8ac6ad82ab62792ec4b0af71",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Ligacao",
+						"Download",
+						"59dd44c28d0eb5fe8ac6ad82ab62792ec4b0af71"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Access_token_UsuarioSistema",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "ApiKey c08ddf9d-a2a7-4308-b98e-e23dbce429b9"
+							}
+						],
+						"url": {
+							"raw": "http://presencamanager.epbx.com.br/Service/api/Ligacao/Download/59dd44c28d0eb5fe8ac6ad82ab62792ec4b0af71",
+							"protocol": "http",
+							"host": [
+								"presencamanager",
+								"epbx",
+								"com",
+								"br"
+							],
+							"path": [
+								"Service",
+								"api",
+								"Ligacao",
+								"Download",
+								"59dd44c28d0eb5fe8ac6ad82ab62792ec4b0af71"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plainText",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "private,no-cache",
+							"name": "cache-control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "content-length",
+							"value": "97071",
+							"name": "content-length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "content-type",
+							"value": "audio/mpeg",
+							"name": "content-type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "date",
+							"value": "Tue, 10 Oct 2017 23:00:44 GMT",
+							"name": "date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "expires",
+							"value": "-1",
+							"name": "expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache",
+							"name": "pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "server",
+							"value": "Microsoft-IIS/8.0",
+							"name": "server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "x-aspnet-version",
+							"value": "4.0.30319",
+							"name": "x-aspnet-version",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Campanha Resumo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"",
+							"try {",
+							"    var data = JSON.parse(responseBody);",
+							"    tests[\"Body contains access_token\"] = responseBody.has(\"access_token\");",
+							"    postman.setEnvironmentVariable(\"i91AccessToken\", data.access_token);",
+							"    postman.setEnvironmentVariable(\"i91RefreshToken\", data.refresh_token);",
+							"}",
+							"catch(e) {",
+							"    console.log('Cannot parse response,probably not a JSON');",
+							"}",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ApiKey {{ApiKey}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/Resumo?CampanhaId=33",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Campanha",
+						"Resumo"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "33"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Access_token_UsuarioSistema",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "ApiKey c08ddf9d-a2a7-4308-b98e-e23dbce429b9"
+							}
+						],
+						"url": {
+							"raw": "http://presencamanager.epbx.com.br/Service/api/Ligacao/Download/59dd44c28d0eb5fe8ac6ad82ab62792ec4b0af71",
+							"protocol": "http",
+							"host": [
+								"presencamanager",
+								"epbx",
+								"com",
+								"br"
+							],
+							"path": [
+								"Service",
+								"api",
+								"Ligacao",
+								"Download",
+								"59dd44c28d0eb5fe8ac6ad82ab62792ec4b0af71"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plainText",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "private,no-cache",
+							"name": "cache-control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "content-length",
+							"value": "97071",
+							"name": "content-length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "content-type",
+							"value": "audio/mpeg",
+							"name": "content-type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "date",
+							"value": "Tue, 10 Oct 2017 23:00:44 GMT",
+							"name": "date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "expires",
+							"value": "-1",
+							"name": "expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache",
+							"name": "pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "server",
+							"value": "Microsoft-IIS/8.0",
+							"name": "server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "x-aspnet-version",
+							"value": "4.0.30319",
+							"name": "x-aspnet-version",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "AtendimentoTipo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"Descricao\" : \"Tipo 3\",\n \"Categorias\": [{\"Descricao\": \"Categoria 3\", \"Ativo\": true}]\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/AtendimentoTipo",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"AtendimentoTipo"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Importação Mailing Lote",
 			"request": {
@@ -172,7 +475,69 @@
 			"response": []
 		},
 		{
-			"name": "Limpar Campanha",
+			"name": "Campanha",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CampanhaId\": 167,\r\n    \"CampanhaLayoutId\": 1,\r\n    \"CampanhaStatusId\": 6,\r\n    \"CampanhaTemplateId\": 1,\r\n    \"GrupoId\": 23,\r\n    \"ServicoId\": null,\r\n    \"RamalId\": null,\r\n    \"RamalTipoId\": null,\r\n    \"CallAnnounceAudioId\": 11,\r\n    \"MaximoDiscagemAcaoId\": null,\r\n    \"GeraArquivoRetornoDiscagem\": true,\r\n    \"Nome\": \"POST Alterado 1527537656\",\r\n    \"Descricao\": \"POST Alterado 1527537656\",\r\n    \"Codigo\": \"1\",\r\n    \"ConsultaBlacklist\": true,\r\n    \"ConsultaBlacklistCrm\": true,\r\n    \"ConsultaBlacklistTemporaria\": true,\r\n    \"PreMetralhadora\": true,\r\n    \"AgendamentoParalelo\": true,\r\n    \"DiscagemVertical\": false,\r\n    \"PendenteAcao\": false,\r\n    \"MaximoDiscagem\": 0,\r\n    \"AgendamentoLimpeza\": true,\r\n    \"TempoMaximoAgendamento\": 2,\r\n    \"HoraLimpezaAgendada\": \"23:00:00\",\r\n    \"MantemAgendamentoLimpezaAgendada\": true,\r\n    \"CampanhaTipoId\": 1,\r\n    \"CampanhaRegra\": [],\r\n    \"CampanhaRota\": [\r\n        {\r\n            \"CampanhaRotaId\": 193,\r\n            \"CampanhaId\": 167,\r\n            \"RegraDiscagemId\": 1,\r\n            \"RotaId\": null,\r\n            \"ClasseId\": null,\r\n            \"ClasseNome\": null\r\n        }\r\n    ],\r\n    \"CampanhaHorario\": [\r\n        {\r\n            \"CampanhaHorarioId\": 1177,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 0,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"18:00:00\",\r\n            \"Ativo\": false\r\n        },\r\n        {\r\n            \"CampanhaHorarioId\": 1178,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 1,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"23:30:00\",\r\n            \"Ativo\": false\r\n        },\r\n        {\r\n            \"CampanhaHorarioId\": 1179,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 2,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"23:30:00\",\r\n            \"Ativo\": false\r\n        },    \r\n        {\r\n            \"CampanhaHorarioId\": 1187,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 3,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"23:30:00\",\r\n            \"Ativo\": false\r\n        },\r\n        {\r\n            \"CampanhaHorarioId\": 1188,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 4,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"23:30:00\",\r\n            \"Ativo\": false\r\n        },\r\n        {\r\n            \"CampanhaHorarioId\": 1189,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 5,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"23:30:00\",\r\n            \"Ativo\": false\r\n        },\r\n        {\r\n            \"CampanhaHorarioId\": 1190,\r\n            \"CampanhaId\": 167,\r\n            \"Dia\": 6,\r\n            \"HoraInicio\": \"09:00:00\",\r\n            \"HoraTermino\": \"18:00:00\",\r\n            \"Ativo\": false\r\n        }\r\n    ],\r\n    \"CampanhaConfiguracao\": [\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3064,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 1,\r\n            \"Valor\": null,\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"IdCampanha\",\r\n            \"Alias\": \"CampanhaId\",\r\n            \"Descricao\": \"Codigo da Campanha a ser configurada\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 5,\r\n            \"Ordem\": 1,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3065,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 2,\r\n            \"Valor\": null,\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"Nome\",\r\n            \"Alias\": \"Nome\",\r\n            \"Descricao\": \"Nome da Campanha a ser configurada\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 2,\r\n            \"Ordem\": 2,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3066,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 3,\r\n            \"Valor\": null,\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"CampanhaAcaoId\",\r\n            \"Alias\": \"CampanhaAcaoId\",\r\n            \"Descricao\": \"Ação a ser realizado no momento do Envio do JSON para o Rabbit\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 5,\r\n            \"Ordem\": 3,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3067,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 4,\r\n            \"Valor\": null,\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"FilaNome\",\r\n            \"Alias\": \"FilaNome\",\r\n            \"Descricao\": \"Nome da Fila ao qual o CTI deve abrir conexão para resgatar os registros de Discagem\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 2,\r\n            \"Ordem\": 4,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3068,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 5,\r\n            \"Valor\": \"3\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"QtasLigRamal\",\r\n            \"Alias\": \"Discagem por Ramal\",\r\n            \"Descricao\": \"Quantidade maxima de Ligações alocadas para os Agentes Livres ( 3x1, 2x1)\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 5,\r\n            \"Ordem\": 5,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3069,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 6,\r\n            \"Valor\": \"45\",\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"TempoRingCliente\",\r\n            \"Alias\": \"Tempo Ring Cliente (seg.)\",\r\n            \"Descricao\": \"Tempo de Duração chamando o Telefone do Cliente\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 1,\r\n            \"Ordem\": 6,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3070,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 7,\r\n            \"Valor\": \"5\",\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"TempoRingPa\",\r\n            \"Alias\": \"Tempo Ring Ramal (seg.)\",\r\n            \"Descricao\": \"Tempo de Duração chamando o Ramal do Agente\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 1,\r\n            \"Ordem\": 7,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3071,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 8,\r\n            \"Valor\": \"b9daefb3\",\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"ArquivoCallBack\",\r\n            \"Alias\": \"Nome Arquivo Call Announce\",\r\n            \"Descricao\": \"Nome do Arquivo .VOX que contém o audio que identifica de qual campanha é a chamada que está entrando. Combinando com o Bit da Flag (VOX_URA_CALLBACK)\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 2,\r\n            \"Ordem\": 8,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3072,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 9,\r\n            \"Valor\": \"1\",\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"VOX_URA_CALLBACK\",\r\n            \"Alias\": \"Habilita Call Announce\",\r\n            \"Descricao\": \"Flag que identifica se o CTI permite Call Announce ou não\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 9,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3073,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 10,\r\n            \"Valor\": \"1\",\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"GRAVA_CAMPANHA\",\r\n            \"Alias\": \"Grava Dialogo\",\r\n            \"Descricao\": \"Identifica se grava o Dialogo de todos os ramais que fazem parte da campanha ou não. Não sobrescreve o grava dialogo do Ramal.\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 10,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3074,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 11,\r\n            \"Valor\": \"1\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"CALL_PROGRESS\",\r\n            \"Alias\": \"Habilita Call Progress\",\r\n            \"Descricao\": \"Habilita ou desabilita o Call Progress da Campanha\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 11,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3075,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 12,\r\n            \"Valor\": null,\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"TRANSF_SERVICO_OPER\",\r\n            \"Alias\": \"Transfere Caixa Postal\",\r\n            \"Descricao\": \"Valida se transfere as chamadas que deram Serviço para a operação ou não.\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 12,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3076,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 13,\r\n            \"Valor\": \"50\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"PercentRetenPre\",\r\n            \"Alias\": \"Percentual Preditivo\",\r\n            \"Descricao\": \"Percentual das chamadas que ficam retidas em caso de atendimento no Ramal do Agente. (Ex: Ramal configurado 4x1 ,dispara a chamada para os 4 telefones se PercentRetenPre estiver configurado com 50% das 4 chamadas atendidas 2 ficaram retidas no ramal e as outras 2 descartadas.\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 5,\r\n            \"Ordem\": 18,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3077,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 14,\r\n            \"Valor\": null,\r\n            \"Alterado\": null,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"TransbordoLinear\",\r\n            \"Alias\": \"Regra Discagem\",\r\n            \"Descricao\": \"Regra padrão para Discagem caso não encontre uma Regra no Mailling.\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 2,\r\n            \"Ordem\": 13,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3078,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 16,\r\n            \"Valor\": \"1\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"FLAG_PREDECTIVE_ON\",\r\n            \"Alias\": \"Habilita Preditivo\",\r\n            \"Descricao\": \"Flag que indica se habilita o envio de Percentual Preditivo  ou não.\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 15,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3079,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 17,\r\n            \"Valor\": null,\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"FLAG_RETER_CALL_TMA_ON\",\r\n            \"Alias\": \"Preditivo TMA Chamada\",\r\n            \"Descricao\": \"Flag que combinado com o Preditivo TMA retem 100% das chamadas.\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 16,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3080,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 18,\r\n            \"Valor\": null,\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": false,\r\n            \"Campo\": \"FLAG_PREDECTIVE_TMA_ON\",\r\n            \"Alias\": \"Retem Preditivo\",\r\n            \"Descricao\": \"Flag que habilita o preditivo combinado com o TMA.\",\r\n            \"Editavel\": false,\r\n            \"CampanhaCampoTipoId\": 4,\r\n            \"Ordem\": 17,\r\n            \"Higienizacao\": false,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3081,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 6,\r\n            \"Valor\": \"20\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"TempoRingCliente\",\r\n            \"Alias\": \"Tempo Ring Cliente (seg.)\",\r\n            \"Descricao\": \"Tempo de Duração chamando o Telefone do Cliente\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 1,\r\n            \"Ordem\": 6,\r\n            \"Higienizacao\": true,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3082,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 5,\r\n            \"Valor\": \"1\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"QtasLigRamal\",\r\n            \"Alias\": \"Discagem por Ramal\",\r\n            \"Descricao\": \"Quantidade maxima de Ligações alocadas para os Agentes Livres ( 3x1, 2x1)\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 5,\r\n            \"Ordem\": 5,\r\n            \"Higienizacao\": true,\r\n            \"FonteId\": null,\r\n            \"FonteComando\": null,\r\n            \"FonteNome\": null,\r\n            \"FonteValor\": null\r\n        },\r\n        {\r\n            \"CampanhaConfiguracaoId\": 3083,\r\n            \"CampanhaId\": 167,\r\n            \"CampanhaCampoId\": 15,\r\n            \"Valor\": \"1\",\r\n            \"Alterado\": true,\r\n            \"Obrigatorio\": true,\r\n            \"Campo\": \"Rota\",\r\n            \"Alias\": \"Rota Padrão\",\r\n            \"Descricao\": \"Rota padrão para Discagem caso não encontre uma Rota no Mailling.\",\r\n            \"Editavel\": true,\r\n            \"CampanhaCampoTipoId\": 1,\r\n            \"Ordem\": 14,\r\n            \"Higienizacao\": true,\r\n            \"FonteId\": 7,\r\n            \"FonteComando\": \"Rota/FonteDados\",\r\n            \"FonteNome\": \"Nome\",\r\n            \"FonteValor\": \"RotaCtiId\"\r\n        }\r\n    ],\r\n    \"CampanhaTelefoneTipo\": [],\r\n    \"CallAnnounceAudio\": {\r\n        \"CampanhaAudioId\": 11,\r\n        \"DataCadastro\": \"2018-05-23T16:11:05.627\",\r\n        \"Nome\": \"Melissa_TV.mp3\",\r\n        \"StatusId\": 1\r\n    },\r\n    \"Visivel\": false\r\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/campanha/167",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"campanha",
+						"167"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AtendimentoTipo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"Descricao\" : \"Tipo 1\",\n \"Categorias\": [{\"Descricao\": \"Categoria 3\", \"Ativo\": true, \"Id\": 10}, \n                {\"Descricao\": \"Categoria Nova\", \"Ativo\": true},\n                {\"Descricao\": \"Teste\", \"Ativo\": true}]\n\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/AtendimentoTipo/5",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"AtendimentoTipo",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atendimento",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -187,22 +552,79 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"CampanhaId\":705,\"MantemAgendamento\":false}"
+					"raw": "{\n\"LayoutId\":5,\n\"DirecaoId\":1,\n\"ClienteId\":13,\n\"CampanhaId\":0,\n\"CategoriaId\":null,\n\"SubCategoriaId\":2,\n\"NA\":\"999999999\",\n\"NB\":\"11997422080\",\n\"Historico\":\"ok\",\n\"CampoGenerico1\":\"\",\n\"CampoGenerico2\":\"\",\n\"Protocolo\":null,\n\"Duracao\":13,\n\"AcaoId\":1,\n\"GlobalId\":\"5a95cbd401e364978dca803e849de8518aad6321\"\n}"
 				},
 				"url": {
-					"raw": "{{UrlApi}}/Campanha/ZerarCampanha?CampanhaId=705",
+					"raw": "{{UrlApi}}/Atendimento",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Atendimento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LayoutConfiguracoes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/AtendimentoLayouts/Campos?Direcao=1&CampanhaId=0",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"AtendimentoLayouts",
+						"Campos"
+					],
+					"query": [
+						{
+							"key": "Direcao",
+							"value": "1"
+						},
+						{
+							"key": "CampanhaId",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todas Campanhas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/GetTodasCampanhas",
 					"host": [
 						"{{UrlApi}}"
 					],
 					"path": [
 						"Campanha",
-						"ZerarCampanha"
-					],
-					"query": [
-						{
-							"key": "CampanhaId",
-							"value": "705"
-						}
+						"GetTodasCampanhas"
 					]
 				}
 			},
@@ -214,10 +636,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2141d0fa-e9bb-4f4a-a325-b217ab59b688",
 						"exec": [
 							"var JsonData = JSON.parse(responseBody);",
-							"pm.environment.set(\"AcessToken\", JsonData.access_token);"
+							"pm.environment.set(\"AcessToken\", JsonData.access_token);",
+							"pm.environment.set(\"RefreshToken\", JsonData.refresh_token);",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -241,12 +664,12 @@
 						},
 						{
 							"key": "username",
-							"value": "admin",
+							"value": "wagner.davanco",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "admin",
+							"value": "Talk@2017",
 							"type": "text"
 						},
 						{
@@ -267,6 +690,19 @@
 		},
 		{
 			"name": "Refresh Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var JsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"AcessToken\", JsonData.access_token);\r",
+							"pm.environment.set(\"RefreshToken\", JsonData.refresh_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -282,17 +718,12 @@
 					"urlencoded": [
 						{
 							"key": "grant_type",
-							"value": "password",
+							"value": "refresh_token",
 							"type": "text"
 						},
 						{
-							"key": "username",
-							"value": "wagner.davanco",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "xxxxxxxxxxxxxx",
+							"key": "refresh_token",
+							"value": "{{RefreshToken}}",
 							"type": "text"
 						},
 						{
@@ -300,58 +731,36 @@
 							"value": "abc",
 							"type": "text"
 						}
-					]
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://integracao.epbx.com.br/Service/oauth2/Token",
-					"protocol": "http",
+					"raw": "{{UrlToken}}",
 					"host": [
-						"integracao",
-						"epbx",
-						"com",
-						"br"
-					],
-					"path": [
-						"Service",
-						"oauth2",
-						"Token"
+						"{{UrlToken}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Listar Retorno Campanha",
+			"name": "Download Avatar",
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{AcessToken}}"
-					}
-				],
+				"header": [],
 				"url": {
-					"raw": "{{UrlApi}}/CampanhaDiscagemRetorno/Lote?CampanhaId=698&LoteControle=1",
+					"raw": "{{UrlApi}}/RamalSupervisao/Avatar/1",
 					"host": [
 						"{{UrlApi}}"
 					],
 					"path": [
-						"CampanhaDiscagemRetorno",
-						"Lote"
-					],
-					"query": [
-						{
-							"key": "CampanhaId",
-							"value": "698"
-						},
-						{
-							"key": "LoteControle",
-							"value": "1"
-						}
+						"RamalSupervisao",
+						"Avatar",
+						"1"
 					]
 				}
 			},
@@ -395,7 +804,44 @@
 			"response": []
 		},
 		{
-			"name": "Todas Campanhas",
+			"name": "Limpar Campanha",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"CampanhaId\":705,\"MantemAgendamento\":false}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/ZerarCampanha?CampanhaId=705",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Campanha",
+						"ZerarCampanha"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "705"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Retorno Campanha",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -409,18 +855,549 @@
 					}
 				],
 				"url": {
-					"raw": "{{UrlApi}}/Campanha/GetTodasCampanhas",
+					"raw": "{{UrlApi}}/CampanhaDiscagemRetorno/Lote?CampanhaId=698&LoteControle=1",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"CampanhaDiscagemRetorno",
+						"Lote"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "698"
+						},
+						{
+							"key": "LoteControle",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Bilhetes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/Bilhete/1/15?DataF=2020-02-01T10:29:00&DataI=2019-01-27T09:29:00&DirecaoId=1&NB=11997422080&OrderBy=BilheteId+Desc",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Bilhete",
+						"1",
+						"15"
+					],
+					"query": [
+						{
+							"key": "DataF",
+							"value": "2020-02-01T10:29:00",
+							"description": "Data Final"
+						},
+						{
+							"key": "DataI",
+							"value": "2019-01-27T09:29:00",
+							"description": "Data Inicial"
+						},
+						{
+							"key": "DirecaoId",
+							"value": "1",
+							"description": "1= Recebida 2= Efetuada"
+						},
+						{
+							"key": "NB",
+							"value": "11997422080"
+						},
+						{
+							"key": "OrderBy",
+							"value": "BilheteId+Desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Ramais Simples",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/RamalSupervisao/GetSimples",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"RamalSupervisao",
+						"GetSimples"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log Sistema",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CodigoCliente\": \"213456\",\r\n    \"Nome\": \"Talk Telecom\",\r\n    \"DDD\": \"11\",\r\n    \"Numero\": \"23910000\",\r\n    \"Detalhe\": \"Info1,Info2,Info3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Campanha/Duplicar?CampanhaId=704",
 					"host": [
 						"{{UrlApi}}"
 					],
 					"path": [
 						"Campanha",
-						"GetTodasCampanhas"
+						"Duplicar"
+					],
+					"query": [
+						{
+							"key": "CampanhaId",
+							"value": "704"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logar Ramal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"TipoLogon\": \"3\", //1=IP\n    \"ParametroLogon\": \"1010\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/IntegracaoRamal/Logar",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"IntegracaoRamal",
+						"Logar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deslogar Ramal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{UrlApi}}/IntegracaoRamal/Deslogar",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"IntegracaoRamal",
+						"Deslogar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Discar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"TipoDiscagem\": \"1\",\n    \"Numero\": \"11997422080\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/IntegracaoRamal/Discar",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"IntegracaoRamal",
+						"Discar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Intervalo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Codigo\": \"3\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/IntegracaoRamal/AlterarIntervalo",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"IntegracaoRamal",
+						"AlterarIntervalo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bilhete URA",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Bilhete/BilheteUra?globalid=5f3ebde5d5ade3d11469e89bad15635204883bf1",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Bilhete",
+						"BilheteUra"
+					],
+					"query": [
+						{
+							"key": "globalid",
+							"value": "5f3ebde5d5ade3d11469e89bad15635204883bf1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Intervalos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{UrlApi}}/IntegracaoRamal/Intervalos",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"IntegracaoRamal",
+						"Intervalos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Ligação Ramal",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/Ligacao/1/10?DataF=2020-11-18T03:00:00.000Z&DataI=2020-11-17T03:00:00.000Z&Duracao=&RamalNumero=1023",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Ligacao",
+						"1",
+						"10"
+					],
+					"query": [
+						{
+							"key": "DataF",
+							"value": "2020-11-18T03:00:00.000Z"
+						},
+						{
+							"key": "DataI",
+							"value": "2020-11-17T03:00:00.000Z"
+						},
+						{
+							"key": "Duracao",
+							"value": ""
+						},
+						{
+							"key": "RamalNumero",
+							"value": "1023"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Usuario Integracao ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Grupo\": \"Miner\",\r\n    \"Nome\": \"Wagner.miner\",\r\n    \"Senha\": \"1234\",\r\n    \"Login\":\"wagner.miner\",\r\n    \"CriarRamal\":\"true\",\r\n    \"AutenticacaoTipoId\": \"1\",\r\n    \"AtendimentoConfiguracaoId\": \"1\",\r\n    \"UsuarioTipoId\": \"3\",\r\n    \"TemplateRamalId\": \"3\"\r\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/Usuario/CadastroIntegracao",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"Usuario",
+						"CadastroIntegracao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registra Atendimento Integracao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"GlobalId\":\"6074776c9b4328702cc8d485194e3abdd954590a\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/AtendimentoIntegracao/Registrar",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"AtendimentoIntegracao",
+						"Registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Integração",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"GlobalId\":\"6074776c9b4328702cc8d485194e3abdd954590a\"\n}"
+				},
+				"url": {
+					"raw": "{{UrlApi}}/AtendimentoIntegracao/Consultar?GlobalId=6074776c9b4328702cc8d485194e3abdd954590a&TemplateId=1",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"AtendimentoIntegracao",
+						"Consultar"
+					],
+					"query": [
+						{
+							"key": "GlobalId",
+							"value": "6074776c9b4328702cc8d485194e3abdd954590a"
+						},
+						{
+							"key": "TemplateId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DashboadSupervisao",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{UrlApi}}/DashboardSupervisao/QuantidadeFilaPorServico?servicos=",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"DashboardSupervisao",
+						"QuantidadeFilaPorServico"
+					],
+					"query": [
+						{
+							"key": "servicos",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desligar Chamada",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AcessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{UrlApi}}/IntegracaoRamal/DesligarChamada",
+					"host": [
+						"{{UrlApi}}"
+					],
+					"path": [
+						"IntegracaoRamal",
+						"DesligarChamada"
 					]
 				}
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
